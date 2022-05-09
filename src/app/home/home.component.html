@@ -1,0 +1,78 @@
+<!-- Loader -->
+<div class="wrapper" *ngIf="loading">
+  <div class="overlay">
+    <div class="spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Safety Lock</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Support</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Change Pass Code</a>
+            <a class="dropdown-item" href="#">Generate OTP</a>
+            <a class="dropdown-item" href="#">Add User</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Button Panel -->
+<div class="main border border-">
+  <div class="block">
+    <img *ngIf="!lockStatus" src="assets/images/unlock.png" alt="Lock Image">
+    <img *ngIf="lockStatus" src="assets/images/locked.png" alt="Lock Image">
+    <div class="buttons">
+      <button class="btn btn-lg btn-primary m-2 m-5" (click)="unlock()" [disabled]="lockStatus === false">Unlock</button>
+      <button class="btn btn-lg btn-primary m-2 m-5" (click)="lock()" [disabled]="lockStatus === true">Lock</button>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-primary" role="alert">
+    Click unLock Button to unlock the Safe and lock button to lock the Safe.
+</div>
+
+<!-- Footer -->
+<div class="container-fluid justify-content-center p-0 mx-0">
+  <div class="row px-0">
+      <div class="col">
+          <div class="card py-5 border-0 card-0">
+              <div class="card-body ">
+                  <div class="form-row">
+                      <div class="col-12 mb-4">
+                          <h5><b>Contact Us</b></h5>
+                      </div>
+                      <div class="col-sm-auto col-12 my-sm-0 mt-3 text-left"><label for="validationCustom01">Name</label> <input type="text" class="form-control" id="validationCustom01" placeholder="Name" value="Chandresh Singh"></div>
+                      <div class="col-sm-auto col-12 my-sm-0 mt-4 "><label for="validationCustom01 ">Contact Number</label><input type="text" class="form-control" id="validationCustom01" placeholder="Contact Number" value="(+91) 9571215827"></div>
+                      <div class="col-sm-auto col-12 my-sm-0 mt-3 text-left"><label for="validationCustom01">Email</label> <input type="email" class="form-control" id="validationCustom01" placeholder="Email" value="chandreshsingh23@gmail.com"></div>
+                      <div class="col-auto align-self-end mt-sm-0 mt-4"><button class="btn btn-round  btn-block btn-success ml-2 mt-md-2 mt-3">Get a call</button></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <hr class="colored" />
+</div>
